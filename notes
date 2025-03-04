@@ -1,0 +1,32 @@
+HTML :- Hyper Text Markup Language
+HTML is the standard markup language for creating Web pages.
+HTML is not a case sensitive language.
+We can create static website by HTML only.
+
+The <!DOCTYPE html> declaration defines this document to be HTML5.
+The <html> element is the root element of an HTML page.
+The <head> element contains meta information about the document.
+
+HTML tags are divided into two categories:
+1) Empty tag / Single tag / unpaired tag: 
+-->This type of tags does not contain any other tag or text. They are started and ended in a same line. 
+-->HTML tag with no content is known as empty tag. 
+-->Example of empty tags are: <br> , <hr> , <img> etc.
+2) Container tag / Double tag / Pair tag: 
+-->This type of tags have an opening tag, some text and tags enclosed in it and a closing tag. 
+-->Example of container tags are: <html> </html>, <body> </body>, <ol> </ol> etc.
+
+Attributes should always be applied with start tag.
+The Attribute should always be applied with its name and value pair.
+
+href- Stands for Hyperlink Reference
+src- Stands for Source
+
+Target - The target attribute specifies where to open the linked document.
+ 1) _blank - Opens the linked document in a new window or tab
+ 2) _self - Opens the linked document in the same window/tab as it was clicked (this is default)
+
+There are 3 types of list :
+1) Unordered Lists
+2) Ordered Lists
+3) Description list

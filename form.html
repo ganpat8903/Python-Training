@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Form</legend>
+        <!-- required :- form must not be empty -->
+        <!-- readonly :- it reads only nothing it can change or insert -->
+        <!-- checked, maxlength , minlength, autofocus -->
+        <input type="number"><br>
+        <input type="text" autofocus><br>
+        <input type="number" min="0" max="30" step="3"><br>
+        Select your favorite color:
+        <input type="color"><br><br>
+        <input type="date" name="bday"><br>
+        <input type="time"><br>
+        <input type="datetime-local"><br>
+        <input type="week"><br>
+        <input type="month"> <br>
+        <input type="range" min="5" max="10"><br> <!--Default range is 0 to 100.-->
+        <input type="url" placeholder="Enter URL"><br>
+        <input type="image" src="image1.jpg" width="60" height="70">
+        <select size="1">
+            <option value="">Amhedabad</option>
+            <option value="">surat</option>
+            <option value="">rajkot</option>
+        </select>
+        <select>
+            <option>Select</option>
+            <optgroup label="Web Designing">
+            <option>HTML</option>
+            <option>CSS</option>
+            </optgroup>
+            <optgroup label="Web Development">
+            <option>PHP</option>
+            <option>MySQL</option>
+            </optgroup>
+            </select>
+        <textarea rows="4" cols="40">
+            This is textarea.
+            </textarea>
+        <input type="submit">
+    </fieldset>
+    </form>
+</body>
+
+</html>
