@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* border-style: solid; Solid |Dotted | Dashed |Double |Groove |Hidden |None |Outset |ridge 
+            border-width: 5px;  thin | medium | thick
+            border-color: green; */
+            border: 5px solid green;
+            /* 3 in 1 */
+            /* border-top:5px solid green;  top | bottom | left | right */
+            /* border-top-style: dotted; */
+            /* border-right-style: solid; */
+            border-style: dotted solid double dashed;
+            /* (top,right, bottom, left)*/
+            /* border-style: dotted solid double; (top, left right, bottom) */
+            width: 20%;
+            text-align: center;
+        }
+
+        h1 {
+            border: 2px solid black;
+            width: 20%;
+            border-radius: 20px 40px;
+        }
+
+        p {
+            border: 10px solid red;
+            padding: 15px;
+            /* border-image-source: url(image1.jpg);
+            border-image-slice: 20%;
+            border-image-repeat:round; */
+            border-image: url(image1.jpg) 20% round;
+        }
+    </style>
+</head>
+
+<body>
+    <div>This div tag has border around it.</div>
+    <h1>this is h1 tag</h1>
+    <p>This is p tag.</p>
+</body>
+
+</html>

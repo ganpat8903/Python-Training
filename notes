@@ -1,0 +1,27 @@
+CSS stands for Cascading Style Sheets.
+CSS is used to design HTML tags.
+
+There are three Ways to Insert CSS in HTML:-
+    1. Inline style
+    -> First Priority 
+    -> We can Define Style in Tag itself.
+    2. Internal style sheet
+    -> Second priority
+    -> We can Define Style between <style></style> 
+    3. External style sheet
+    -> Third priority 
+    -> We can create separate file style.css 
+
+An id and class name cannot start with a number in selector.
+
+We can assign Colors in CSS using 3 different methods:-
+    1. Color Name
+    -> a valid color name like "red" , “yellow”,”gray”
+    2. RGB Value
+    -> an RGB value like rgb(255, 0, 0)  Value : (red,green,blue) Rang: 0 to 255
+    3. Hex Value
+    -> a HEX value like "#ff0000"
+
+In table:-
+tr:nth-child(odd) {background-color: #f2f2f2;}
+tr:nth-child(even) {background-color: #1cc1567b;}

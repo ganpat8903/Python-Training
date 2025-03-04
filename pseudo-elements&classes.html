@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Pseudo elements */
+        .p1::first-line {
+            color: #1500ff;
+            font-variant: small-caps;
+        }
+
+        .p2::first-letter {
+            color: red;
+            font-size: 30px;
+        }
+
+        .p3::before {
+            /* to insert some content before the content of an element. */
+            content: "Hiiiii...";
+            color: green;
+            font-size: 30px;
+        }
+
+        .p4::after {
+            /* to insert some content after the content of an element. */
+            content: url(image1.jpg);
+
+        }
+
+        ::marker {
+            /*  selects the markers of list items. (ol and ul) */
+            color: violet;
+            font-size: 24px;
+        }
+
+        ::selection {
+            /* it selects the portion of an element that is selected by a user */
+            color: red;
+            background-color: yellow;
+        }
+
+        /* pseudo classes */
+        .p5:active {
+            color: red;
+        }
+
+        /* The :checked selector matches every checked <input> element (only for radio buttons and checkboxes) */
+        input:checked {
+            height: 50px;
+            width: 50px;
+        }
+
+        input[type=text]:enabled {
+            background: #61a9cd;
+        }
+
+        input[type=text]:disabled {
+            background: #23a432;
+        }
+
+        p:empty {
+            /* for empty tag ,no content inside tags */
+            width: 100px;
+            height: 20px;
+            background: #ff0000;
+        }
+
+        p:first-child {
+            /*last-child*/
+            background-color: rgb(95, 151, 204);
+        }
+
+        p:first-of-type {
+            /* The :first-of-type selector matches every element that is the first child  of a particular 
+type, of its parent.*/
+            background: red;
+        }
+
+        input[type="text"]:focus {
+            color: #23a432;
+            background-color: yellow;
+        }
+
+        input:in-range {
+            /* selects all elements with a value that is within a specified range */
+            border: 2px solid rgb(0, 17, 255);
+            background-color: violet;
+        }
+
+        input:invalid {
+            /* The :invalid selector selects form elements with a value that does not validate according 
+                    to the element's settings.
+                The :invalid selector only works for form elements with limitations, such as input elements 
+                    with min and max attributes, email fields without a legal email, or number fields without a 
+                    numeric value, etc. */
+            border: 2px solid red;
+            background-color: cornflowerblue;
+        }
+
+        h2 {
+            color: tomato;
+        }
+
+        /* :not(h2) {
+            matches every element that is NOT the specified element/selector
+            color: green;
+        } */
+
+        /*-> The :nth-child(n) selector matches every element that is the nth child of its parent.
+        -> n can be a number, a keyword (odd or even), or a formula (like an + b).*/
+        .divdemo:nth-child(2) {
+            /* if you want to run this nth-child then comment all other tags */
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pseudo elements</h1>
+    <p class="p1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+        it to make a type specimen book.</p>
+    <p class="p2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+        it to make a type specimen book.</p>
+    <p class="p3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+        it to make a type specimen book.</p>
+    <p class="p4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+        it to make a type specimen book.</p>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <ol>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ol>
+    <hr>
+    <h1>Pseudo classes</h1>
+    <p class="p5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+        it to make a type specimen book.</p>
+    <form action="/">
+        <input type="radio" checked value="male" name="gender"> Male
+        <input type="radio" value="female" name="gender"> Female<br>
+        <input type="checkbox" checked name="reading"> Reading
+        <input type="checkbox" name="dancing"> Dancing <br>
+        First name: <input type="text" value="Test1"><br>
+        Last name: <input type="text" value="Test2"><br>
+        Country: <input type="text" disabled value="India"><br>
+        <input type="number" min="5" max="10">
+        <input type="email">
+    </form>
+    <p></p>
+    <p>This is a paragraph.</p>
+    <div>
+        <p>This paragraph is the first child of its parent (div).</p>
+        <p>This paragraph is not the first child of its parent (div).</p>
+    </div>
+    <h2>this i h2 tag</h2>
+    <div class="divdemo">
+        <h4>This is some text div1.</h4>
+    </div>
+    <div class="divdemo">
+        <h4>This is some text div2.</h4>
+    </div>
+    <div class="divdemo">
+        <h4>This is some text div3.</h4>
+    </div>
+    <div class="divdemo">
+        <h4>This is some text div4.</h4>
+    </div>
+    <div class="divdemo">
+        <h4>This is some text div5.</h4>
+    </div>
+</body>
+
+</html>

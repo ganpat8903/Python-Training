@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        div span {
+            visibility: hidden;
+            width: 120px;
+            background-color: gray;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+        }
+
+        div:hover span {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <abbr title="Tooltip text">Hover Over me</abbr><br>
+    <div>Hover over me
+        <span>Tooltip text</span>
+    </div>
+</body>
+
+</html>

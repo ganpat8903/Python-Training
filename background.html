@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p1 {
+            background-color: red;
+            background-image: url(image1.jpg);
+            /* By default, a background-image is placed on the top-left corner of any element, and 
+                repeated both vertically and horizontally. */
+            background-repeat: repeat;
+            /*(by default) Background Image - Repeat Horizontally or Vertically*/
+            background-repeat: no-repeat;
+            /* one time image display */
+            /* background-repeat: repeat-x;
+            background-repeat: repeat-y; */
+            background-position: left top;
+            background-attachment: fixed;
+            width: 20%;
+            /* fixed or scroll */
+
+        }
+
+        #b1 {
+            border: 2px solid red;
+            padding: 25px;
+            background: url(image1.jpg);
+            background-size: contain;
+            color: white;
+        }
+
+        #b2 {
+            border: 2px solid red;
+            padding: 25px;
+            background: url(image1.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        #b3 {
+            background: url(image1.jpg);
+            color: white;
+            border: 6px dashed #333;
+            height: 120px;
+            width: 150px;
+            padding: 10px;
+            /* The CSS3 background-origin property specifies where the background image is positioned */
+            background-origin: content-box;
+            /* border-box | padding-box(by default) | content-box */
+            background-repeat: no-repeat;
+        }
+
+        #b4 {
+            background: red;
+            color: white;
+            border: 5px dashed #333;
+            height: 120px;
+            width: 150px;
+            padding: 10px;
+            /* The CSS3 background-clip property specifies the painting area of the background. */
+            background-clip: content-box;/* border-box(by default) | padding-box | content-box */
+        }
+    </style>
+</head>
+
+<body>
+    <p class="p1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis. <br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis.<br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis.<br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis.<br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis.<br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis.<br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis.<br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis.<br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, illo. Eligendi tempore autem numquam cumque,
+        ipsa minus ut explicabo cupiditate? Repudiandae distinctio molestiae eos fugiat, saepe officiis doloribus
+        molestias quis.
+    </p>
+    <p id="b1">Border Image...</p>
+    <p id="b2">Border Image...</p>
+    <p id="b3">Background image...</p>
+    <p id="b4">Background Color...</p>
+</body>
+
+</html>
