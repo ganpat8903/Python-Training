@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div a {
+            color: black;
+            float: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        div a:active {
+            background-color: blueviolet;
+            color: white;
+            border: 1px solid blueviolet;
+        }
+        div .active{
+            background-color: blueviolet;
+        }
+        div a:hover:not(.active) {
+                background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="">&laquo;</a>
+        <a href="">1</a>
+        <a href="" class="active">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">&raquo;</a>
+    </div>
+</body>
+
+</html>

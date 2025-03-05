@@ -9,25 +9,72 @@
         h1 {
             color: red;
             text-align: center;
-            border:2px solid blue;
-            text-decoration:underline; /*Text decoration can be underline, overline, line-through or none.*/
-            text-transform: lowercase;/*Text transform can be lowercase, uppercase, capitalize.*/
-            word-spacing: 10px; /*to specify the space  between the words in a text.*/
-            text-shadow: 5px 5px 6px yellow; /* ( horizontal size, vertical size, blur effect size, shadow color) */
+            border: 2px solid blue;
+            text-decoration: underline;
+            /*Text decoration can be underline, overline, line-through or none.*/
+            text-transform: lowercase;
+            /*Text transform can be lowercase, uppercase, capitalize.*/
+            word-spacing: 10px;
+            /*to specify the space  between the words in a text.*/
+            text-shadow: 5px 5px 6px yellow;
+            /* ( horizontal size, vertical size, blur effect size, shadow color) */
         }
-        p{
+
+        .p1 {
             border: 2px solid green;
             text-indent: 30px;
-            line-height: 100px; /*This property is used to set the space between the lines*/
-            letter-spacing: 10px; /*to specify the space  between the characters in a text*/
+            line-height: 100px;
+            /*This property is used to set the space between the lines*/
+            letter-spacing: 10px;
+            /*to specify the space  between the characters in a text*/
+        }
+
+        p.test1 {
+            white-space: nowrap;
+            width: 200px;
+            border: 1px solid #000000;
+            overflow: hidden;
+            text-overflow: clip;
+        }
+
+        p.test2 {
+            white-space: nowrap;
+            width: 200px;
+            border: 1px solid #000000;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        p.test1:hover,
+        p.test2:hover {
+            overflow: visible;
+            width: 340px;
+        }
+
+        div.test {
+            width: 200px;
+            word-wrap: normal;
+            border: 1px solid blue;
+        }
+
+        div.test1 {
+            width: 200px;
+            word-wrap: break-word;
+            border: 1px solid blue;
         }
     </style>
 </head>
 
 <body>
     <h1>This is h1 tag ....</h1>
-    <p>This is p tag ....</p>
-    <p>This is another p tag ....</p>
+    <p class="p1">This is p tag ....</p>
+    <p class="p1">This is another p tag ....</p>
+    <h2>text-overflow: clip</h2>
+    <p class="test1">This is some long text that will not fit in the box</p>
+    <h2>text-overflow: ellipsis</h2>
+    <p class="test2">This is some long text that will not fit in the box</p>
+    <div class="test">This div has very long word: thisisaveryveryveryveryveryverylongword. </div>
+    <div class="test1">This div has very long word: thisisaveryveryveryveryveryverylongword. </div>
 </body>
 
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            /* to top , to left , to right , to bottom, to top left , to bottom right... */
+            /* we can also write angles like 0deg , 90deg ,etc */
+            background:linear-gradient(to bottom left,green,orange,blue);
+            /* background:linear-gradient(90deg,green,orange,blue); */
+            height: 500px;
+            width:100%;
+        }
+        #div2{
+            background: repeating-linear-gradient(to left, red ,pink 20% ,green 30%);
+            height: 500px;
+            width:100%;
+        }
+        #div3{
+            /* if we did not write circle then by default it's oval shape */
+            background: radial-gradient(circle,red,green,blue);
+            height: 500px;
+            width:100%;
+        }
+        #div4{
+            background: radial-gradient(red 20%,green 20%,blue 50%);
+            height: 500px;
+            width:100%;
+        }
+        #div5{
+            background: repeating-radial-gradient(circle,red,yellow 10%,blue 15%);
+            height: 500px;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        This is my div1...
+    </div>
+    <div id="div2">
+        This is my div2...
+    </div>
+    <div id="div3">
+        This is my div3...
+    </div>
+    <div id="div4">
+        This is my div4...
+    </div>
+    <div id="div5">
+        This is my div5...
+    </div>
+</body>
+</html>

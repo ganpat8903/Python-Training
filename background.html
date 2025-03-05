@@ -19,9 +19,8 @@
             background-repeat: repeat-y; */
             background-position: left top;
             background-attachment: fixed;
-            width: 20%;
             /* fixed or scroll */
-
+            width: 20%;
         }
 
         #b1 {
@@ -48,7 +47,7 @@
             width: 150px;
             padding: 10px;
             /* The CSS3 background-origin property specifies where the background image is positioned */
-            background-origin: content-box;
+            background-origin: padding-box;
             /* border-box | padding-box(by default) | content-box */
             background-repeat: no-repeat;
         }
@@ -61,7 +60,8 @@
             width: 150px;
             padding: 10px;
             /* The CSS3 background-clip property specifies the painting area of the background. */
-            background-clip: content-box;/* border-box(by default) | padding-box | content-box */
+            background-clip: content-box;
+            /* border-box(by default) | padding-box | content-box */
         }
     </style>
 </head>
