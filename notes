@@ -1,0 +1,14 @@
+We mainly use JavaScript to create:-
+    -->websites
+    -->web applications
+    -->server-side applications using Node.js
+    -->Advance Library or Framework Like React,Angular Etc
+
+The language was initially called LiveScript and was later renamed JavaScript.
+
+There are 2 Method to write Javascript Code in HTML
+    1. Internal
+    2. External
+
+Single Line Comments :- //
+Multi Line Comments :- /* content */

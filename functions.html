@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+    <script>
+        /*
+        There are basically two types of functions in JS:
+            1. Built in Functions :- String Function,Math Function
+            2. User-defined functions :- We can Define Function as per requirement 
+        */
+        /*
+         There are four types of user define function:
+             1. No Argument ,No Return Type 
+             2. Argument ,Return Type 
+             3. Argument ,No Return Type 
+             4. No Argument ,Return Type
+        */
+
+        // 1. No Argument ,No Return Type 
+        function message() {
+            document.writeln("<h5>No Argument ,No Return Type</h5>")
+        }
+        message()
+
+        // 2. Argument ,Return Type
+        function sumDemo(a, b) {
+            var c = a + b;
+            return c;
+        }
+        var x = sumDemo(10, 20);
+        document.write("X Value is " + x);
+
+        // 3. Argument ,No Return Type 
+        function sum(a, b) {
+            var c = a + b;
+            document.write("<br/>Sum is ", c);
+        }
+        sum(10, 20);
+
+        // 4. No Argument ,Return Type
+        function printMessage() {
+            return "<h2>Hello World!</h2>";
+        }
+        var msg = printMessage();
+        document.write(msg);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

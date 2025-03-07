@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <script>
+        /*
+        There are 3 ways to construct array in JavaScript.
+            1. By array literal
+            2. By creating instance of Array directly (using new keyword)
+            3. By using an Array constructor (using new keyword)
+        */
+
+        //1. By array literal
+        document.writeln("<h2>By array literal</h2>")
+        var arr = [10, 20, 30];
+        for (i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "<br/>");
+        }
+
+        //2. By creating instance of Array directly(using new keyword)
+        document.writeln("<h2>instance of Array</h2>")
+        var arrayname = new Array();
+        arrayname[0] = 1
+        arrayname[1] = 2
+        arrayname[4] = 3
+        for (var i = 0; i < arrayname.length; i++) {
+            document.writeln(arrayname[i], "<br>")
+        }
+
+        // By using an Array constructor (using new keyword)
+        document.writeln("<h2>using an Array constructor</h2>")
+        var arr = new Array(10, 20, 30);
+        for (i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "<br/>");
+        }
+
+        // array methods
+        document.writeln("<h2>Array Methods</h2>")
+        var a1 = [1, 2, 3]
+        var a2 = [4, 5, 6]
+        var a3 = [7, 8, 9]
+
+        // concat() :- to join multiple arrays
+        document.writeln(a1.concat(a2), "<br>")
+        document.writeln(a1.concat(a2, a3), "<br>")
+
+        // flat() :- It creates a new array carrying sub-array elements concatenated recursively till the specified depth.
+        arr = [1, 2, [3, 4, [5, 6, [10]], [7]], [8, 9]]
+        document.writeln(arr + " len:" + arr.length + "<br>")
+        newarr = arr.flat()// 2D array to 1D
+        document.writeln(newarr + " len:" + newarr.length + "<br>")
+
+        // fill() :- It fills elements into an array with static values.
+        var a = [1, 2, 3, 4, 5]
+        document.writeln(a.fill("hi") + "<br>")
+
+        // includes() :- It checks whether the given array contains the specified element.
+        var b = [1, 22, 33, "by"]
+        document.writeln(b.includes(1))
+        document.writeln(b.includes(33, 3) + "<br>")//2nd parameter is optional it decides index number where to start searching.
+
+        // indexOf() :- It searches the specified element in the given array and returns the index of 
+        // the first match
+        c = [10, 20, 30, 20, 40, 30]
+        document.writeln(c.indexOf(2) + "<br>")//not found then -1
+        document.writeln(c.indexOf(30) + "<br>")
+
+        // lastIndexOf() :- It searches the specified element in the given array and returns the index of 
+        // the last match
+        document.writeln(c.lastIndexOf(2) + "<br>")//not found then -1
+        document.writeln(c.lastIndexOf(30) + "<br>")
+
+        // Array.isArray() :- It tests if the passed value is an array.
+        document.writeln(Array.isArray(c) + "<br>")
+
+        // join() :- It joins the elements of an array as a string.
+        document.writeln(c.join("-"), "<br>")
+
+        // map() :- It calls the specified function for every array element and returns the new array
+        s = [1, 2.5, 12.33, 23.5, 32.6]
+        document.writeln(s.map(Math.round), "<br>")
+
+        // pop() :- It removes last element from array
+        w = [10, 20, 30]
+        document.writeln(w.pop(), "<br>")//it takes no index to remove
+
+        // shift() :- It removes first element from array
+        w = [10, 20, 30]
+        document.writeln(w.shift(), "<br>")//it takes no index to remove
+
+        // push() :- It add elements at the end of array
+        x = [2, 5, 6, 8]
+        x.push(1)
+        x.push(100, 200)
+        document.writeln(x, "<br>")
+
+        // unshift() :- It add elements at the beginning of array
+        y = [22, 31, 12, 3, 4]
+        y.unshift(10)
+        y.unshift(100, 200)
+        document.writeln(y, "<br>")
+
+        // reverse() :- It reverses the elements of given array.
+        document.writeln(y.reverse(), "<br>")
+
+        // slice() :- It returns a new array containing the copy of the part of the given array.
+        var q = [10, 20, 50, 30, 40]
+        document.writeln(q.slice(1, 4), "<br>")
+
+        // sort() :- It returns the element of the given array in a sorted order
+        var m = ["banana", "apple", "papaya"]
+        document.writeln(m.sort(), "<br>")//this sort methods if for string elements only
+        var n = [2, 5, 3, 12, 6, 5, 44, 3]
+        document.writeln(n.sort(function (a, b) { return a - b }), "<br>")
+
+        // splice() :- It add/remove elements to/from the given array
+        // array.splice(start,delete,element1) 
+        array=[22,32,4,5,4,3]
+        document.writeln(array.splice(1,2,0),"<br>")
+        document.writeln(array,"<br>")
+
+        // entries() :- It creates an iterator object and a loop that iterates over each key/value pair.
+        array=[33,22,32,34,32]
+        for (var i of array.entries()){
+            document.writeln(i,"<br>")
+        }
+
+        // keys() :- It creates an iterator object that contains only the keys of the array.
+        for( var i of array.keys()){
+            document.writeln(i,"<br>")
+        }
+
+        // values() :- It creates a new iterator object carrying values for each index in the array.
+        for( var i of array.values()){
+            document.writeln(i,"<br>")
+        }
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

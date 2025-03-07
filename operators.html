@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operators</title>
+    <script>
+        /*Arithmetic Operators
+        Assignment Operators
+        Relational/ Comparison Operator
+        Logical Operators*/
+
+        x = 10;
+        y = 5;
+        // Arithmetic Operators
+        document.write("<h4>Arithmetic Operators</h4>")
+        document.write("Addition :", x + y, "<br>");
+        document.write("Subtraction :", x - y, "<br>");
+        document.write("Multiplication :", x * y, "<br>");
+        document.write("Division :", x / y, "<br>")
+        document.write("Modulus :", x % y, "<br>")
+        x++;
+        y++;
+        document.writeln("x=", x, "<br>", "y=", y, "<br><br>")
+
+        //Assignment Operators :- += , -= , /= , *= , %=
+        document.write("<h4>Assignment Operators</h4>")
+        x += y;
+        //x=x+y;
+        document.write("x is :" + x + "<br><br>");
+
+        // Relational/ Comparison Operator
+        document.write("<h4>Relational/ Comparison Operators</h4>")
+        x = 10
+        y = "10"
+        document.write("x==y :", x == y, "<br>");
+        document.write("x===y :", x === y, "<br>");
+        document.write("x!=y :", x != y, "<br>");
+        document.write("x>y :", x > y, "<br>");
+        document.write("x>=y :", x >= y, "<br>");
+        document.write("x<=y :", x <= y, "<br><br>");
+
+        // Logical Operators :- && , || , !
+        document.write("<h4>Logical Operators</h4>")
+        n1 = 20; n2 = 30; n3 = 10;
+        if (n1 > n2 && n1 > n3) {
+            document.write("n1 is greater");
+        }
+        else if (n2 > n1 && n2 > n3) {
+            document.write("n2 is greater");
+        }
+        else {
+            document.write("n3 is greater");
+        }
+        document.writeln("<br>")
+        c1 = 'i';
+        if (c1 == 'a' || c1 == 'e' || c1 == 'i' || c1 == 'o' || c1 == 'u') {
+            document.write("vowel");
+        }
+        else {
+            document.write("consonant");
+        }
+        document.writeln("<br>")
+        x=1
+        y="2"
+        if (!(x < y)) {
+            document.write("y is smaller");
+        }
+        else {
+            document.write("x is greater");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

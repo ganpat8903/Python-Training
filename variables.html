@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables</title>
+    <script>
+        /*There are 4 Ways to Declare a JavaScript Variable:
+               Using var keyword
+               Using let keyword
+               Using const keyword
+               Using nothing(direct variable name) keyword*/
+        // A variable name can start with alphabet and  underscore only.
+        var n1 = 10;
+        document.writeln("n1 is "+ n1,"<br>");
+        // Var global value - Entire Page we can access value
+        // Let Scope Based Value - Withing bracket {} we can access value
+        var a=100
+        document.writeln(a);
+        if (true){
+            let a=200;
+            document.writeln(a)
+        }
+        document.writeln(a)
+        // data types :- string , number , boolean , null , undefined
+        document.writeln(typeof(a),"<br>")
+        s="hello"
+        document.writeln(typeof(s))
+        let c;
+        document.writeln(typeof(c))
+        let d=null
+        document.writeln(typeof(d))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
