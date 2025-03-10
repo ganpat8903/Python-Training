@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+    <script>
+        let a = 10
+        document.writeln("Hello" + a + "<br>")
+        document.writeln(`By${a}<br>`) // backticks
+
+        let b = `Hello
+                How are you?
+                Thanks.<br>`;// we can write like this but in quots we can't
+        document.writeln(b)
+
+        document.writeln(typeof a) // we can write like this instead of typeof(a)
+
+        document.writeln("<br>hello \" and \' <br>");
+        document.writeln(`by ' and " `);
+        const message=(a)=>{
+                document.writeln(`<br>hey function ${a}`)
+        }
+        message("by")
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopUp Box</title>
+    <script>
+        /*
+        JavaScript has three kind of popup boxes:-
+            1. Alert box :- When an alert box pops up, the user will have to click "OK" to proceed.
+            2. Confirm box :- When a confirm box pops up, the user will have to click either "OK" or 
+                            "Cancel" to proceed. 
+            3. Prompt box :-  When a prompt box pops up, the user will have to click either "OK" or "Cancel" to 
+                            proceed after entering an input value. 
+        */
+        // alert("Welcome to Js!")
+        // confirm("Are you sure!")
+        function showPopup() {
+            var a = confirm("Thank you for Clicking on Button!");
+            if (a == true) {
+                document.write("Ok Button Clicked!");
+                window.location = "array.html"
+            } else {
+                document.write("Cancel Button Clicked!");
+            }
+        }
+        function show_prompt() {
+            var name = prompt("Enter your name", "Jack");// second parameter os optional it's for default value.
+            if (name != null && name != "") {
+                document.write("Hello " + name);
+            }
+            else if (name == null) {
+                document.write(`You clicked cancel button ${name}`);
+            }
+            else {
+                document.write("Value is blank " + name);
+            }
+        }
+        function addition() {
+            // we can use parseInt or parseFloat also
+            a = Number(prompt("Enter a number: "))
+            b = Number(prompt("Enter second number: "))
+            document.writeln(`sum of ${a} and ${b} is ${a + b}.`)
+        }
+        const getData = () => {
+            // var name=document.getElementById("n1").value
+            var name = form.name1.value
+            document.writeln(name)
+        }
+        const set_get_data = () => {
+            var a = form.name2.value  // get value
+            form.value2.value = "helooooooo" // set value
+        }
+        function add() {
+            var num1, num2;
+            if (frm.n1.value == "") {
+                alert("enter num1:");
+                frm.n1.focus();
+            } else if (frm.n2.value == "") {
+                alert("enter num2:");
+                frm.n2.focus();
+            } else {
+                num1 = parseInt(frm.n1.value);
+                num2 = parseInt(frm.n2.value);
+                rs = num1 + num2;
+                frm.res.value = rs;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="alert('button clicked.')">alert box</button><br><br>
+    <button onclick="showPopup()">confirm box</button><br><br>
+    <button onclick="show_prompt()">Prompt box</button><br><br>
+    <button onclick="addition()">Add</button><br><br>
+    <form id="form">
+        <input type="text" name="name1" placeholder="Enter name" id="n1">
+        <input type="button" onclick="getData()" value="get Data"><br><br>
+        <input type="text" name="name2" placeholder="Enter name"><br><br>
+        <input type="text" name="value2" placeholder="Enter value"><br><br>
+        <input type="button" onclick="set_get_data()" value="Click Me"><br><br>
+    </form>
+    <form name="frm">
+        num1:<input type="text" name="n1"><br>
+        num2:<input type="text" name="n2"><br>
+        result:<input type="text" name="res"><br>
+        <input type="button" value="SUM" onclick="add()">
+    </form>
+</body>
+
+</html>

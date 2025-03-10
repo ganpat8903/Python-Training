@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script>
+        // Mouse Events:- onclick(), onmouseup() , onmousedown() , onmouseover() , onmouseout() , onmousemove()
+        // Keyboard Events:- onkeydown() , onkeyup() ,onkeypress() 
+        // Form Events:- onsubmit() , onfocus() , onchange() , onblur()
+        // Window/Document Events:- onload() , onunload() , onresize()
+        function mouse_events() {
+            alert("onlick button")
+        }
+        function bigimg(x) {
+            x.style.height = "600px";
+            x.style.width = "600px";
+        }
+        function smallimg(x) {
+            x.style.height = "200px";
+            x.style.width = "200px";
+        }
+        function big(x) {
+            x.style.backgroundColor = "red";
+            x.style.fontSize = "100px";
+            x.innerHTML = "Release Me";
+        }
+        function small(x) {
+            x.style.backgroundColor = "yellow";
+            x.style.fontSize = "50px";
+            x.innerHTML = "click me";
+        }
+        function move(x) {
+            x.style.backgroundColor = "red";
+            x.style.fontSize = "100px";
+            x.innerHTML = "Hiii…";
+        }
+        function keydown(x) {
+            x.style.backgroundColor = "green"
+            x.style.color = "blue"
+        } function keyup(x) {
+            x.style.backgroundColor = "white"
+            x.style.color = "black"
+        }
+        function upp() {
+            frm.nm1.value = frm.nm1.value.toUpperCase();
+            frm.nm2.value = frm.nm2.value.toUpperCase();
+            frm.nm3.value = frm.nm3.value.toUpperCase();
+        }
+        function form_focus() {
+            form.tid.style.backgroundColor = "red";
+            form.tid.style.width = "300px";
+        }
+        function form_submit() {
+            alert("The form was submitted to server...");
+        }
+        function form_blur() {
+            form.nm.value = form.nm.value.toUpperCase();
+            form.nm.style.backgroundColor = "red";
+            form.nm.style.color = "yellow";
+        }
+        function form_change() {
+            var x = form.mySelect.value;
+            document.write("You selected: " + x);
+        }
+        function doc_load(){
+            alert("Load page...")
+        }
+        function doc_size(){
+            alert("resizing page...")
+        }
+    </script>
+</head>
+
+<body onload="doc_load()" onresize="doc_size()">
+    <!-- mouse events -->
+    <h2 style='margin-bottom:0px'>Mouse Events</h2>     
+    <button onclick="mouse_events()">Click Me</button>
+    <img src="image1.jpg" height="400px" width="400px" onmouseover="bigimg(this)" onmouseout="smallimg(this)"><br><br>
+    <marquee onmouseover="this.stop()" onmouseout="this.start()" style="background-color: yellow;"> Hello over and out
+    </marquee>
+    <div onmousedown="big(this)" onmouseup="small(this)">Hello up and down</div>
+    <div onmousemove="move(this)">Hello Move</div>
+
+    <!-- Keyboard Events -->
+    <!-- onkeydown :- all keys can press -->
+    <!-- onkeypress :- all keys cannot press like shift key, alt key , ctrl key -->
+    <h2 style='margin-bottom:0px'>Keyboard Events</h2>     
+    <input type="text" onkeypress="keydown(this)" onkeyup="keyup(this)"><br><br>
+    <form id="frm">
+        Enter Name: <input type="text" name="nm1" onkeyup="upp()" placeholder="key up"><br>
+        Enter Name: <input type="text" name="nm2" onkeydown="upp()" placeholder="key down"><br>
+        Enter Name: <input type="text" name="nm3" onkeypress="upp()" placeholder="key press"><br>
+    </form>
+
+    <br>
+    <!-- Form Events -->
+    <!-- onblur():-When the focus is away from a form element -->
+    <h2 style='margin-bottom:0px'>Form Events</h2>     
+    <form name="form">
+        <input type="text" name="tid" onfocus="form_focus()" placeholder="focus"><br>
+        <input type="text" name="nm" onblur="form_blur()" placeholder="blur"><br>
+        <select name="mySelect" onchange="form_change()">
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+            <option value="Java">Java</option>
+            <option value="HTML">HTML</option>
+        </select>
+    </form>
+    <form onsubmit="form_submit()">
+        Enter name: <input type="text" name="myName" placeholder="submit"> <br>
+        <input type="submit" value="Submit Data">
+    </form>
+
+    <!-- Window/Document Events -->
+    <!-- 
+        ->onload() :-When the browser finishes the loading of the page.
+        ->onunload() :- When the visitor leaves the current webpage, the browser unloads it.
+        ->onresize() :-When the visitor resizes the window of the browser.
+     -->
+    <!-- Note: Due to different browser settings, onunload event may not always work as expected. -->
+
+    <!-- JavaScript - Page Redirection -->
+     <button onclick="redirect()">Redirect</button>
+     <script>
+        function redirect(){
+            window.location="image1.jpg"
+            window.onload = alert("hiiiiiiii")
+        }
+     </script>
+</body>
+
+</html>
