@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance datatypes and loops</title>
+    <script>
+        /*
+        There are two types of data types in JavaScript:-
+            Primitive data type (String, Number, Boolean, Undefined, Null, Symbol)
+            Non-primitive (reference) data type (Object, Array)
+        */
+        // String
+        document.writeln("<h2 style='margin-bottom:0px'>String</h2>")
+        var a = 'Hello World';
+        var b = "Hello JS";
+        document.write(a + "<br />" + b);
+
+        // Number:  represent positive or negative numbers with or without decimal place
+        document.writeln("<h2 style='margin-bottom:0px'>Number</h2>")
+        var a = 100;
+        var b = 100.5;
+        document.write(a + "<br />" + b);
+
+        // Boolean: true or false
+        document.writeln("<h2 style='margin-bottom:0px'>Boolean</h2>")
+        var a = 10;
+        var b = 20;
+        document.write(a > b, "<br>");
+        document.write(a < b);
+
+        // Undefined: If a variable has been declared, but has not been assigned a value
+        document.writeln("<h2 style='margin-bottom:0px'>Undefined</h2>")
+        var c;
+        var d = 20;
+        document.write(c + "<br>");
+        document.write(d);
+
+        // null: A null value means that there is no value
+        document.writeln("<h2 style='margin-bottom:0px'>Null</h2>")
+        var c = null;
+        var d = 20;
+        document.write(c + "<br>");
+        document.write(d);
+
+        // Symbol: The JavaScript ES6 introduced a new data type called Symbol.
+        //          Symbol is an immutable primitive value that is unique.
+        document.writeln("<h2 style='margin-bottom:0px'>Symbol</h2>")
+        const value1 = Symbol('hello');
+        const value2 = 'hello';
+        // document.writeln(value1.replace("h","e")) error
+        document.write(value1 === value2);//false
+
+        // Object: JavaScript object is a non-primitive data-type that allows you to store multiple collections of data.
+        document.writeln("<h2 style='margin-bottom:0px'>Object</h2>")
+        const person = {
+            name: 'Aarav',
+            age: 10
+        };
+        document.write(person + "<br>");
+        //Accessing Object Property Using dot Notation
+        document.write(person.name + "<br>");
+        //Accessing Object Property Using bracket Notation
+        document.write(person['age']);
+
+        // nested loop
+        document.writeln("<h2 style='margin-bottom:0px'>Loops</h2>")
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write("*");
+            }
+            document.writeln("<br>")
+        }
+        for (let i in person) {//gives index or key
+            document.writeln(i, "<br>")
+        }
+        a = [10, 20, 30]//not work in object
+        for (let i of a) {//gives value
+            document.writeln(i, "<br>")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

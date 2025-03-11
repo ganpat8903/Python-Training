@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script>
+        function ValidateName() {
+            var myname = name_form.myname.value;
+            if (myname == null || myname == "") {
+                alert("Enter Name");
+            }
+        }
+        function ValidateNumber() {
+            var mno = number_form.mno.value;
+            if (mno == "") {
+                alert("Enter Mobile No");
+            }
+            else if (isNaN(mno)) {
+                alert("Enter Digits Only");
+            }
+        }
+        function ValidateRadio() {
+            if ((document.radio_form.gender[0].checked == false) && (document.radio_form.gender[1].checked == false)) {
+                alert("Select your gender...");
+            }
+        }
+        function ValidateCheckbox() {
+            if ((document.checkbox_form.hobby[0].checked == false) && (document.checkbox_form.hobby[1].checked == false) &&
+                (document.checkbox_form.hobby[2].checked == false)) {
+                alert("Select your hobby...");
+            }
+        }
+        function ValidateDropdown() {
+            if (document.dropdown_form.city.value == "-1") {
+                alert("Select your city...");
+            }
+        }
+        function ValidateEmail() {
+            var x = document.email_form.email.value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!x.match(mailformat)) {
+                alert("Please enter a valid e-mail address");
+            }
+        }
+        function valnm() {
+            if (number_form.nm.value == "") {
+                number_form.nm.style.border = "4px solid red";
+            }
+            else {
+                number_form.nm.style.border = "4px solid green";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="name_form" onsubmit="ValidateName()">
+        Enter Name:<input type="text" name="myname"></br></br>
+        <input type="submit" value="Submit Data">
+    </form><br>
+
+    <form name="number_form" onsubmit="ValidateNumber()">
+        UserName:<input type="text" name="nm" onBlur="valnm()"><br><br>
+        Enter Mobile No:<input type="text" name="mno"></br></br>
+        <input type="submit" value="Submit Data">
+    </form><br>
+
+    <form name="radio_form" onsubmit="ValidateRadio()">
+        Gender:<input type="radio" name="gender" value="M">Male
+        <input type="radio" name="gender" value="F">Female</br></br>
+        <input type="submit" value="Submit Data">
+    </form><br>
+
+    <form name="checkbox_form" onsubmit="ValidateCheckbox()">
+        Hobby:<input type="checkbox" name="hobby" value="Reading">Reading
+        <input type="checkbox" name="hobby" value="Dancing">Dancing
+        <input type="checkbox" name="hobby" value="Singing">Singing
+        </br></br>
+        <input type="submit" value="Submit Data">
+    </form><br>
+
+    <form name="dropdown_form" onsubmit="ValidateDropdown()">
+        City:<select name="city">
+            <option value="-1" selected disabled>---Select City---</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Surat">Surat</option>
+            <option value="Rajkot">Rajkot</option>
+        </select>
+        </br></br>
+        <input type="submit" value="Submit Data">
+    </form><br>
+
+    <form name="email_form" onsubmit="ValidateEmail()">
+        Email: <input type="text" name="email"><br /><br>
+        <input type="submit" value="Submit Data">
+    </form>
+</body>
+
+</html>

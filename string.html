@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <script>
+        /*
+        There are 2 ways to create string in JavaScript:-
+            1. By string literal
+            2. By string object (using new keyword)
+        */
+        // 1. By string literal
+        var s = "Hello!"
+        document.writeln(s)
+
+        // 2. By string object (using new keyword)
+        var name = new String("String")
+        document.writeln(name)
+
+        // String Methods
+        document.writeln("<h1>String Methods</h1>")
+
+        // charAt(): used to find out a char value present at the specified index in a string.
+        document.writeln("<h3 style='margin-bottom:0px'>charAt()</h3>")
+        let str = "Hello World";
+        document.write(str.charAt(1));
+
+        // concat(): combines two or more strings and returns a new string.
+        document.writeln("<h3 style='margin-bottom:0px'>concat()</h3>")
+        let str1 = "Hello";
+        let str2 = "World";
+        let str3 = "Hii ";
+        document.write(str1.concat(str2) + "<br>");
+        document.write(str1.concat(str2, str3));
+
+        // indexOf():  used to search the position from left of a particular character. This method is case-sensitive.
+        document.writeln("<h3 style='margin-bottom:0px'>indexOf()</h3>")
+        let nm = "Ganpat Kumawat";
+        document.writeln(nm.indexOf('e'));  // not found then -1
+        document.writeln("<br>" + nm.indexOf("a", 2)) // 2nd parameter is optional it's for index start
+
+        // lastIndexOf():  used to search the position from right(last) of a particular character. This method is case-sensitive.
+        document.writeln("<h3 style='margin-bottom:0px'>lastIndexOf()</h3>")
+        let nm2 = "Ganpat Kumawat";
+        document.writeln(nm.lastIndexOf('e'));  // not found then -1
+        document.writeln("<br>" + nm2.lastIndexOf("a", 10))// 2nd parameter is optional it's for index start
+
+        // match(): used to match the string against a regular expression.
+        document.writeln("<h3 style='margin-bottom:0px'>match()</h3>")
+        let str4 = "Hello World";
+        document.write(str4.match('Hello') + "<br>");
+        document.write(str4.match('Hello World') + "<br>");
+        document.write(str4.match('hello') + "<br>");
+        document.write(str4.match('xyz'));
+
+        // replace(): used to match the string against a regular expression.
+        document.writeln("<h3 style='margin-bottom:0px'>replace()</h3>")
+        let s1 = "Hello Hello World";
+        let s2 = "Hello";
+        document.write(s1.replace('Hello', 'Hii') + "<br>");//it will replace 1st Hello only
+        document.write(s2.replace('l', 'i'))
+
+        // search(): used to search the regular expression in the given string.
+        document.writeln("<h3 style='margin-bottom:0px'>search()</h3>")
+        let st = "Ganpat Kumawat";
+        document.writeln(st.search('World'), "<br>");//not found then -1
+        document.writeln(st.search("Ganpat"))
+
+        // slice(): used to fetch the part of the string and returns the new string.
+        document.writeln("<h3 style='margin-bottom:0px'>slice()</h3>")
+        let s3 = "Hello World";
+        document.write(s3.slice(1, 4) + "<br>");
+        document.write(s3.slice(2) + "<br>");
+        document.write(s3.slice(-4) + "<br>");
+        document.write(s3.slice(-4, -2));
+
+        // split(): divides a string into a list of substrings.
+        document.writeln("<h3 style='margin-bottom:0px'>split()</h3>")
+        let c = "Hello World";
+        document.write(c.split(" "), "<br>");
+        document.write(c.split("l"));
+
+        // substr(): fetch the part of the given string and return the new string.
+        document.writeln("<h3 style='margin-bottom:0px'>substr()</h3>")
+        document.write(c.substr(6, 4));//substr(start index,length)
+
+        // substring(): fetch the string on the basis of provided index and returns the new sub string. 
+        document.writeln("<h3 style='margin-bottom:0px'>substring()</h3>")
+        document.write(c.substring(6, 10));//substring(start index,end index)
+
+        // toLowerCase(): convert the string into lowercase letter.
+        document.writeln("<h3 style='margin-bottom:0px'>toLowerCase()</h3>")
+        document.write(c.toLowerCase());
+
+        // toUpperCase(): convert the string into uppercase letter.
+        document.writeln("<h3 style='margin-bottom:0px'>toUpperCase()</h3>")
+        document.write(c.toUpperCase());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

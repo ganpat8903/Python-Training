@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        // getElementById(): returns the element that has the ID attribute with the specified value.
+        // getElementsByName(): returns all the element of specified name
+        // getElementsByTagName(): returns a collection of all elements in the document with the specified tag name
+        // getElementsByClassName(): returns a collection of all elements in the document with the specified class name, as an HTMLCollection object
+
+        // innerText: return Text content of Html Element.InnetText will only Get and Set Text Value (Not Html Tag).
+        // innerHTML: return html content of Html Element.
+        // value: if there is text box like input tag then use value to get data
+        function element_by_id() {
+            var x = document.getElementById("by_id");
+            x.style.color = "red";
+        }
+        function set_inner_text() {
+            var x = document.getElementById("set_innerText_id");
+            x.innerText = "<h1>This is an inner Text!</h1>"// in this html tag will print in text
+        }
+        function get_inner_text() {
+            var x = document.getElementById("get_innerText_id");
+            var data = x.innerText
+            document.writeln("Data: " + data)
+        }
+        function set_inner_html() {
+            var x = document.getElementById("set_innerHTML_id");
+            x.innerHTML = "<h1>This is an inner HTML!</h1>"// in this html tag will work
+        }
+        function get_inner_html() {
+            var x = document.getElementById("get_innerHTML_id");
+            var data = x.innerHTML
+            document.writeln("Data: " + data)
+        }
+        function get_value() {
+            var x = document.getElementById("value_id");
+            var data = x.value;
+            document.getElementById("data").innerText = data
+        }
+        function addition() {
+            var n1 = document.getElementsByName("n1")[0].value;
+            var n2 = document.getElementsByName("n1")[1].value;
+            var n = Number(n1) + Number(n2)
+            document.getElementById("add").innerText = "Addition: " + n
+        }
+        function count() {
+            var x = document.getElementsByTagName("input");
+            alert("input tags are :" + x.length);
+        }
+        function myFunction() {
+            var x = document.getElementsByClassName("demo");
+            x[0].style.color = "red";
+            x[1].style.color = "green"
+        }
+    </script>
+</head>
+
+<body>
+    <p id="by_id">Get Element By Id</p>
+    <button onclick="element_by_id()">Click Me to change text red color!</button>
+
+    <p id="set_innerText_id"></p>
+    <button onclick="set_inner_text()">Click Me to set inner text!</button>
+
+    <p id="get_innerText_id"><i><u>Hello!</u> this is get inner text</i></p>
+    <button onclick="get_inner_text()">Click Me to get inner text!</button>
+
+    <p id="set_innerHTML_id"></p>
+    <button onclick="set_inner_html()">Click Me to set inner HTML!</button>
+
+    <p id="get_innerHTML_id"><i><u>Hello!</u> this is get inner HTML</i></p>
+    <button onclick="get_inner_html()">Click Me to get inner HTML!</button><br><br>
+
+    <input type="text" id="value_id">
+    <button onclick="get_value()">Click Me to get text!</button>
+    <p id="data"></p>
+
+    <form name="frm">
+        Enter No1:<input type="number" name="n1" /><br />
+        Enter No2:<input type="number" name="n1" /><br />
+        <input type="button" value="Add" onclick="addition()" /><br><br>
+        <input type="button" value="count" onclick="count()" />
+        <h3 id="add"></h3>
+    </form>
+
+    <p class="demo">Hello World</p>
+    <p class="demo">Hello World</p>
+    <button onclick="myFunction()">Click Me!!</button>
+</body>
+
+</html>
