@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login &amp; Registration Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="../CSS/login-signup.css">
+  <script src="../JS/login-signup.js"></script>
+</head>
+
+<body>
+  <div class="container" id="container-id">
+    <div class="forms">
+      <!-- Login Form -->
+      <div class="form login">
+        <span class="title">Login</span>
+
+        <form action="#" name="form">
+          <div class="input-field">
+            <input type="email" onchange="validate_login_email()" name="email" placeholder="Enter your email" required>
+            <i class="uil uil-envelope icon"></i>
+            <b class="uil uil-exclamation-circle exclam" id="emailexcal"></b>
+
+          </div>
+          <p id="email" ></i></p>
+          <div class="input-field">
+            <input type="password" onchange="validate_login_password()" class="password" name="password"
+              placeholder="Enter your password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" id="passwordeye"></i>
+            <!-- <b class="uil uil-exclamation-circle exclam" id="passwordexcal"></b> -->
+
+          </div>
+          <p id="password"></p>
+
+          <div class="checkbox-text">
+            <div class="checkbox-content">
+              <input type="checkbox" id="logCheck" name="logchk">
+              <label for="logCheck" class="text">Remember me</label>
+            </div>
+
+            <a href="#" class="text" onclick="change_forget()">Forgot password?</a>
+          </div>
+
+          <div class="input-field button">
+            <input type="button" value="Login" onclick="validate_login()">
+          </div>
+        </form>
+
+        <div class="login-signup">
+          <span class="text">Not a member?
+            <a href="#" class="text signup-link" onclick="change_form()">Signup Now</a>
+          </span>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <div class="form signup">
+        <span class="title">Registration</span>
+
+        <form action="#" name="frm">
+          <div class="input-field">
+            <input type="text" onchange="validate_name()" name="name" placeholder="Enter your name" required>
+            <i class="uil uil-user icon"></i>
+            <b class="uil uil-exclamation-circle exclam" id="nameexcal"></b>
+          </div>
+          <p id="name"></p>
+          <div class="input-field">
+            <input type="email" onchange="validate_email()" name="mail" placeholder="Enter your email" required>
+            <i class="uil uil-envelope icon"></i>
+            <b class="uil uil-exclamation-circle exclam" id="mailexcal"></b>
+          </div>
+          <p id="mail"></p>
+          <div class="input-field">
+            <input type="password" onchange="validate_pass()" name="pass" class="password"
+              placeholder="Create a password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" id="passeye"></i>
+            <!-- <b class="uil uil-exclamation-circle exclam" id="passexcal"></b> -->
+          </div>
+          <p id="pass"></p>
+          <div class="input-field">
+            <input type="password" onchange="validate_confirm_pass()" name="confirmpass" class="password"
+              placeholder="Confirm a password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" id="confirmpasseye"></i>
+            <!-- <b class="uil uil-exclamation-circle exclam" id="confirmpassexcal"></b> -->
+          </div>
+          <p id="confirmpass"></p>
+
+          <div class="checkbox-text">
+            <div class="checkbox-content">
+              <input type="checkbox" id="termCon" name="check" required>
+              <label for="termCon" class="text">I accepted all terms and conditions</label>
+            </div>
+          </div>
+          <p id="terms"></p>
+
+          <div class="input-field button">
+            <input type="button" value="Signup" onclick="validate_signup()">
+          </div>
+        </form>
+
+        <div class="login-signup">
+          <span class="text">Already a member?
+            <a href="#" class="text login-link" onclick="change_form()">Login Now</a>
+          </span>
+        </div>
+      </div>
+
+      <!-- Forget Form -->
+      <div class="form forget">
+        <span class="title">Forgot</span>
+
+        <form action="#" name="fm">
+          <div class="input-field">
+            <input type="email" name="ml" onchange="validate_forgot_email()" placeholder="Enter your email" required>
+            <i class="uil uil-envelope icon"></i>
+            <b class="uil uil-exclamation-circle exclam" id="mlexcal"></b>
+          </div>
+          <p id="ml"></p>
+          <div class="input-field">
+            <input type="password" onchange="validate_forgot_pass()" name="pwd" class="password"
+              placeholder="Create a password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" id="pwdeye"></i>
+          </div>
+          <p id="pwd"></p>
+          <div class="input-field">
+            <input type="password" onchange="validate_forgot_confirm_pass()" name="confirmpwd" class="password"
+              placeholder="Confirm a password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" id="confirmpwdeye"></i>
+          </div>
+          <p id="confirmpwd"></p>
+
+          <div class="input-field button">
+            <input type="button" value="Submit" onclick="validate_forgot()">
+          </div>
+        </form>
+
+        <div class="login-signup">
+          <span class="text">
+            <a href="#" class="text login-link" onclick="change_forget()">Back to Login</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
