@@ -36,204 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validate_login() {
-    let email = form.email.value
-    let password = form.password.value
-    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    let text = "";
-    let css = "";
-    let content = "";
-    let count = 0
-    let email_flag=false
-    let password_flag=false
-
-    for(let i=0;i<details.length;i++){
-        let check_email=details[i]['email'];
-        if(email==check_email){
-            email_flag=true
-            if(password==details[i]['password']){
-                password_flag=true
-            }
-            break
-        }
-    }
-    
-    if (email == "" || email == null) {
-        text = "Email can't be blank"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else if (!validate_email.test(email.trim())) {
-        text = "Must be a valid email format!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else if(!email_flag){
-       text ="This email id not registered yet!"
-    }
-    else {
-        text = ""
-        css = ""
-        content = "hidden"
-        count += 1
-    }
-    document.getElementById("email").innerHTML=text
-    document.getElementById("email").innerHTML = text
-    emailexcal.style.visibility = content
-    form.email.style.border = css
-    text = "";
-    css = ""
-    content = ""
-    
-    if (password == "" || password == null) {
-        text = "Password can't be blank"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (password.trim() == "") {
-        text = "Password can't contains spaces"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (password.trim().length < 8) {
-        text = "Password must have minimum 8 characters"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if(!password_flag){
-        text="Password is incorrect for this email!"
-    }
-    else {
-        text = ""
-        css = ""
-        count += 1
-    }
-    document.getElementById("password").innerHTML = text
-    form.password.style.border = css
-    
-    if (count == 2) {
+    if (validate_login_email() && validate_login_password()) {
         alert("Login successful!")
         form.email.value = ""
         form.password.value = ""
-        form.logchk.checked=false
+        form.logchk.checked = false
+    } else {
+        validate_login_email()
+        validate_login_password()
     }
 }
 function validate_signup() {
     let name = frm.name.value
     let email = frm.mail.value
     let password = frm.pass.value
-    let confirm_password = frm.confirmpass.value
-    let validate_name = /^[A-Za-z\s]+$/
-    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    let validate_password = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$_%^&*])/
-    let text = "";
-    let css = ""
-    let content = ""
-    let count = 0
-    let email_flag=false
-    for(let i=0;i<details.length;i++){
-        let check_email=details[i]['email'];
-        if(email==check_email){
-            email_flag=true
-            break
-        }
-    }
-    if (name == "" || name == null) {
-        text = "Name can't be blank"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else if (name.trim() == "") {
-        text = "Name can't contain spaces in beginning"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else if ((!validate_name.test(name.trim()))) {
-        text = "Name conatins only alphabets"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else {
-        text = ""
-        css = ""
-        content = "hidden"
-        count += 1
-    }
-    document.getElementById("name").innerHTML = text
-    frm.name.style.border = css
-    nameexcal.style.visibility = content
-    text = ""
-    css = ""
-    content = ""
-    if (email == "" || email == null) {
-        text = "Email can't be blank"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else if (!validate_email.test(email.trim())) {
-        text = "Must be a valid email format!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else if(email_flag){
-        text="This email already exists!"
-    }
-    else {
-        text = ""
-        css = ""
-        content = "hidden"
-        count += 1
-    }
-    document.getElementById("mail").innerHTML = text
-    frm.mail.style.border = css
-    mailexcal.style.visibility = content
-    text = "";
-    css = ""
-    if (password == "" || password == null) {
-        text = "Password can't be blank"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (password.trim() == "") {
-        text = "Password can't contains spaces"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (password.trim().length < 8 || password.trim().length > 12) {
-        text = "Password must be 8-12 characters"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (password == name || password == email.slice(0, email.indexOf("@"))) {
-        text = "Password should not be the same as email/username"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (!validate_password.test(password)) {
-        text = `must have at least one uppercase letter, one lowercase letter, one number, and one special character`
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else {
-        text = ""
-        css = ""
-        count += 1
-    }
-    document.getElementById("pass").innerHTML = text
-    frm.pass.style.border = css
-    text = ""
-    css = ""
-    if (password != confirm_password.trim()) {
-        text = "Confirm Password must be same as password!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    } else {
-        text = ""
-        css = ""
-        count += 1
-    }
-    document.getElementById("confirmpass").innerHTML = text
-    frm.confirmpass.style.border = css
-    let check = frm.check.checked
-    text = ""
-    if (check == false) {
-        text = "Accept the terms and conditions!"
-    } else {
-        text = ""
-        count += 1
-    }
-    document.getElementById("terms").innerHTML = text
-    if (count == 5) {
+    if (validate_name() && validate_email() && validate_pass() && validate_confirm_pass() && validate_terms()) {
         details.push({
             "name": name,
             "email": email,
@@ -246,212 +63,262 @@ function validate_signup() {
         frm.confirmpass.value = ""
         frm.check.checked = false
         console.log(details)
+    } else {
+        validate_name()
+        validate_email()
+        validate_pass()
+        validate_confirm_pass()
+        validate_terms()
     }
 }
 
 function validate_name() {
-    let name = frm.name.value
-    let validate_name = /^[A-Za-z\s]+$/
-    let text = ""
-    let css = ""
-    let content = ""
-    if ((!validate_name.test(name.trim()))) {
-        text = "Name conatins only alphabets"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else {
-        text = ""
-        css = ""
-        content = "hidden"
-    }
-    document.getElementById("name").innerHTML = text
-    nameexcal.style.visibility = content
-    frm.name.style.border = css
-}
-function validate_email() {
-    let email = frm.mail.value
-    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    let text = ""
-    let css = ""
-    let content = ""
-    if (!validate_email.test(email.trim())) {
-        text = "Must be a valid email format!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else {
-        text = ""
-        css = ""
-        content = "hidden"
-    }
-    document.getElementById("mail").innerHTML = text
-    frm.mail.style.border = css
-    mailexcal.style.visibility = content
-}
-function validate_login_email() {
-    let email = form.email.value
-    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    let text = ""
-    let css = ""
-    let content = ""
-    if (!validate_email.test(email.trim())) {
-        text = "Must be a valid email format!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else {
-        text = ""
-        css = ""
-        content = "hidden"
-    }
-    document.getElementById("email").innerHTML = text
-    emailexcal.style.visibility = content
-    form.email.style.border = css
-}
-function validate_pass() {
-    let name = frm.name.value
-    let email = frm.mail.value
-    let password = frm.pass.value
-    let validate_password = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$_%^&*])/
-    let text = "";
-    let css = ""
-    // let content=""
-    // let eye=""
-    if (password.trim().length < 8 || password.trim().length > 12) {
-        text = "Password must be 8-12 characters"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        // content="visible"
-        // eye="hidden"
-    }
-    else if (password == name || password == email.slice(0, email.indexOf("@"))) {
-        text = "Password should not be the same as email/username"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        // content="visible"
-        // eye="hidden"
-    }
-    else if (!validate_password.test(password)) {
-        text = `must have at least one uppercase letter, one lowercase letter, one number, and one special character`
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        // content="visible"
-        // eye="hidden"
-    }
-    else {
-        text = ""
-        css = ""
-        // content="hidden"
-        // eye="visible"
-    }
-    document.getElementById("pass").innerHTML = text
-    // passeye.style.visibility=eye
-    frm.pass.style.border = css
-    // passexcal.style.visibility=content
-}
-function validate_login_password() {
-    let password = form.password.value
-    let text = "";
-    let css = ""
-    if (password.trim().length < 8 || password.trim().length > 12) {
-        text = "Password must be 8-12 characters"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else {
-        text = ""
-        css = ""
-    }
-    document.getElementById("password").innerHTML = text
-    form.password.style.border = css
-}
-function validate_confirm_pass() {
-    let confirm_password = frm.confirmpass.value
-    let password = frm.pass.value
-    let text = ""
-    let css = ""
-    if (password != confirm_password) {
-        text = "Confirm Password must be same as password!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
+    let nameInput = document.forms["frm"]["name"];
+    let name = nameInput.value;
+    let validate_name = /^[A-Za-z\s]+$/;
+    let nameMessage = document.getElementById("name");
+    let exclamIcon = document.getElementById("nameexcal");
+    if (name === "" || name == null) {
+        nameMessage.innerHTML = "Name can't be blank";
+        nameInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
+    } else if (name.trim() === "") {
+        nameMessage.innerHTML = "Name can't contain spaces at the beginning";
+        nameInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
+    } else if (!validate_name.test(name.trim())) {
+        nameMessage.innerHTML = "Name contains only alphabets";
+        nameInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
     } else {
-        text = ""
-        css = ""
+        nameMessage.innerHTML = "";
+        nameInput.classList.remove("error-border");
+        exclamIcon.classList.remove("error-exclam");
+        return true;
     }
-    document.getElementById("confirmpass").innerHTML = text
-    frm.confirmpass.style.border = css
+}
+
+function validate_email() {
+    let emailInput = document.forms["frm"]["mail"];
+    let email = emailInput.value;
+    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let emailMessage = document.getElementById("mail");
+    let exclamIcon = document.getElementById("mailexcal");
+    let email_flag = false
+    for (let i = 0; i < details.length; i++) {
+        let check_email = details[i]['email'];
+        if (email == check_email) {
+            email_flag = true
+            break
+        }
+    }
+    if (email === "" || email == null) {
+        emailMessage.innerHTML = "Email can't be blank";
+        emailInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
+    } else if (!validate_email.test(email.trim())) {
+        emailMessage.innerHTML = "Must be a valid email format!";
+        emailInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
+    }
+    else if (email_flag) {
+        emailMessage.innerHTML = "This email already exists!"
+        emailInput.classList.remove("error-border");
+        exclamIcon.classList.remove("error-exclam");
+        return false;
+    } else {
+        emailMessage.innerHTML = "";
+        emailInput.classList.remove("error-border");
+        exclamIcon.classList.remove("error-exclam");
+        return true;
+    }
+}
+
+function validate_login_email() {
+    let emailInput = document.forms["form"]["email"];
+    let email = emailInput.value.trim();
+    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let emailMessage = document.getElementById("email");
+    let exclamIcon = document.getElementById("emailexcal");
+    let email_flag = false
+
+    for (let i = 0; i < details.length; i++) {
+        let check_email = details[i]['email'];
+        if (email == check_email) {
+            email_flag = true
+            break
+        }
+    }
+    if (email == "" || email == null) {
+        emailMessage.innerHTML = "Email can't be blank"
+        emailInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
+    }
+    else if (!validate_email.test(email)) {
+        emailMessage.innerHTML = "Must be a valid email format!";
+        emailInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
+    }
+    else if (!email_flag) {
+        emailMessage.innerHTML = "This email id not registered yet!"
+        emailInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
+    }
+    else {
+        emailMessage.innerHTML = "";
+        emailInput.classList.remove("error-border");
+        exclamIcon.classList.remove("error-exclam");
+        return true;
+    }
+}
+
+function validate_pass() {
+    let form = document.forms["frm"];
+    let name = form["name"].value;
+    let email = form["mail"].value;
+    let passwordInput = form["pass"];
+    let password = passwordInput.value.trim();
+    let passwordMessage = document.getElementById("pass");
+    
+    let errors = [];
+
+    if (password === "" || password == null) {
+        passwordMessage.innerHTML="Password can't be blank";
+        passwordInput.classList.add("error-border");
+        return false;
+    }
+    else if (password.includes(" ")) {
+        passwordMessage.innerHTML="Password can't contain spaces";
+        passwordInput.classList.add("error-border");
+        return false;
+    }
+    else if (password === name || password === email.slice(0, email.indexOf("@"))) {
+       passwordMessage.innerHTML="Password should not be the same as email/username";
+       passwordInput.classList.add("error-border");
+       return false;
+    }
+    else if (password.length < 8 || password.length > 12) {
+       passwordMessage.innerHTML="Password must be 8-12 characters";
+       passwordInput.classList.add("error-border");
+       return false;
+    }
+    
+    let uppercase = /[A-Z]/.test(password);
+    let lowercase = /[a-z]/.test(password);
+    let number = /\d/.test(password);
+    let specialChar = /[!@#$_%^&*]/.test(password);
+    
+    if (!uppercase) {
+        errors.push("Must include at least one uppercase letter");
+    }
+    if (!lowercase) {
+        errors.push("Must include at least one lowercase letter");
+    }
+    if (!number) {
+        errors.push("Must include at least one number");
+    }
+    if (!specialChar) {
+        errors.push("Must include at least one special character (!@#$_%^&*)");
+    }
+
+    if (errors.length > 0) {
+        passwordMessage.innerHTML = errors.join("<br>"); 
+        passwordInput.classList.add("error-border");
+        return false;
+    } else {
+        passwordMessage.innerHTML = "";
+        passwordInput.classList.remove("error-border");
+        return true;
+    }
+}
+
+function validate_login_password() {
+    let passwordInput = document.forms["form"]["password"];
+    let password = passwordInput.value.trim();
+    let emailInput = document.forms["form"]["email"];
+    let email = emailInput.value.trim();
+    let passwordMessage = document.getElementById("password");
+    let password_flag = false
+
+    for (let i = 0; i < details.length; i++) {
+        let check_email = details[i]['email'];
+        if (email == check_email) {
+            if (password == details[i]['password']) {
+                password_flag = true
+            }
+            break
+        }
+    }
+
+    if (password == "" || password == null) {
+        passwordMessage.innerHTML = "Password can't be blank"
+        passwordInput.classList.add("error-border");
+        return false;
+    }
+    else if (password.length < 8 || password.length > 12) {
+        passwordMessage.innerHTML = "Password must be 8-12 characters";
+        passwordInput.classList.add("error-border");
+        return false;
+    }
+    else if (!password_flag) {
+        passwordMessage.innerHTML = "Password is incorrect for this email!"
+        passwordInput.classList.add("error-border");
+        return false;
+    } else {
+        passwordMessage.innerHTML = "";
+        passwordInput.classList.remove("error-border");
+        return true;
+    }
+}
+
+function validate_confirm_pass() {
+    let form = document.forms["frm"];
+    let confirmPasswordInput = form["confirmpass"];
+    let password = form["pass"].value;
+    let confirmPassword = confirmPasswordInput.value;
+    let confirmPasswordMessage = document.getElementById("confirmpass");
+
+    if (password !== confirmPassword) {
+        confirmPasswordMessage.innerHTML = "Confirm Password must be the same as Password!";
+        confirmPasswordInput.classList.add("error-border");
+        return false;
+    } else {
+        confirmPasswordMessage.innerHTML = "";
+        confirmPasswordInput.classList.remove("error-border");
+        return true;
+    }
+}
+function validate_terms() {
+    let checkBox = document.forms["frm"]["check"];
+    let termsMessage = document.getElementById("terms");
+
+    if (!checkBox.checked) {
+        termsMessage.innerHTML = "Accept the terms and conditions!";
+        return false;
+    } else {
+        termsMessage.innerHTML = "";
+        return true;
+    }
 }
 
 function validate_forgot() {
     let email = fm.ml.value
     let password = fm.pwd.value
-    let confirm_password = fm.confirmpwd.value
-    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    let validate_password = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$_%^&*])/
-    let text = "";
-    let css = ""
-    let content = ""
-    let count = 0
-    let email_flag=false
-    for(let i=0;i<details.length;i++){
-        let check_email=details[i]['email'];
-        if(email==check_email){
-            email_flag=true
-            break
-        }
-    }
-    if (!validate_email.test(email.trim())) {
-        text = "Must be a valid email format!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
-    }
-    else if(!email_flag){
-        text="This email id not exists!"
-    }
-    else {
-        text = ""
-        css = ""
-        content = "hidden"
-        count += 1
-    }
-    document.getElementById("ml").innerHTML = text
-    fm.ml.style.border = css
-    mlexcal.style.visibility = content
-    text = "";
-    css = ""
-    if (password.trim() == "") {
-        text = "Password can't contains spaces"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (password.trim().length < 8 || password.trim().length > 12) {
-        text = "Password must be 8-12 characters"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (!validate_password.test(password)) {
-        text = `must have at least one uppercase letter, one lowercase letter, one number, and one special character`
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else {
-        text = ""
-        css = ""
-        count += 1
-    }
-    document.getElementById("pwd").innerHTML = text
-    fm.pwd.style.border = css
-    text = ""
-    css = ""
-    if (password != confirm_password) {
-        text = "Confirm Password must be same as password!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    } else {
-        text = ""
-        css = ""
-        count += 1
-    }
-    document.getElementById("confirmpwd").innerHTML = text
-    fm.confirmpwd.style.border = css
-    if (count == 3) {
+
+    if (validate_forgot_email() && validate_forgot_pass() && validate_forgot_confirm_pass()) {
         alert("password changed!")
-        for(let i=0;i<details.length;i++){
-            let check_email=details[i]['email'];
-            if(email==check_email){
-                details[i]['password']=password
+        for (let i = 0; i < details.length; i++) {
+            let check_email = details[i]['email'];
+            if (email == check_email) {
+                details[i]['password'] = password
                 break
             }
         }
@@ -460,60 +327,111 @@ function validate_forgot() {
         fm.pwd.value = ""
         fm.confirmpwd.value = ""
         change_forget()
+    } else {
+        validate_forgot_email()
+        validate_forgot_pass()
+        validate_forgot_confirm_pass()
     }
 }
 function validate_forgot_email() {
-    let email = fm.ml.value
-    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    let text = ""
-    let css = ""
-    let content = ""
-    if (!validate_email.test(email.trim())) {
-        text = "Must be a valid email format!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-        content = "visible"
+    let emailInput = document.forms["fm"]["ml"];
+    let email = emailInput.value.trim();
+    let validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let emailMessage = document.getElementById("ml");
+    let exclamIcon = document.getElementById("mlexcal");
+    let email_flag = false
+    for (let i = 0; i < details.length; i++) {
+        let check_email = details[i]['email'];
+        if (email == check_email) {
+            email_flag = true
+            break
+        }
     }
-    else {
-        text = ""
-        css = ""
-        content = "hidden"
+
+    if (email == "") {
+        emailMessage.innerHTML = "Email can't be blank!";
+        emailInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
+    } else if (!validate_email.test(email)) {
+        emailMessage.innerHTML = "Must be a valid email format!";
+        emailInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
     }
-    document.getElementById("ml").innerHTML = text
-    fm.ml.style.border = css
-    mlexcal.style.visibility = content
-}
-function validate_forgot_pass() {
-    let password = fm.pwd.value
-    let validate_password = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$_%^&*])/
-    let text = "";
-    let css = ""
-    if (password.trim().length < 8 || password.trim().length > 12) {
-        text = "Password must be 8-12 characters"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else if (!validate_password.test(password)) {
-        text = `must have at least one uppercase letter, one lowercase letter, one number, and one special character`
-        css = "2px solid rgba(198, 6, 6, 0.936)"
-    }
-    else {
-        text = ""
-        css = ""
-    }
-    document.getElementById("pwd").innerHTML = text
-    fm.pwd.style.border = css
-}
-function validate_forgot_confirm_pass() {
-    let confirm_password = fm.confirmpwd.value
-    let password = fm.pwd.value
-    let text = ""
-    let css = ""
-    if (password != confirm_password) {
-        text = "Confirm Password must be same as password!"
-        css = "2px solid rgba(198, 6, 6, 0.936)"
+    else if (!email_flag) {
+        emailMessage.innerHTML = "This email id not exists!"
+        emailInput.classList.add("error-border");
+        exclamIcon.classList.add("error-exclam");
+        return false;
     } else {
-        text = ""
-        css = ""
+        emailMessage.innerHTML = "";
+        emailInput.classList.remove("error-border");
+        exclamIcon.classList.remove("error-exclam");
+        return true;
     }
-    document.getElementById("confirmpwd").innerHTML = text
-    fm.confirmpwd.style.border = css
+}
+
+function validate_forgot_pass() {
+    let passwordInput = document.forms["fm"]["pwd"];
+    let password = passwordInput.value.trim();
+    let passwordMessage = document.getElementById("pwd");
+    let errors = [];
+
+    if (password === "" || password == null) {
+        passwordMessage.innerHTML="Password can't be blank";
+        passwordInput.classList.add("error-border");
+        return false;
+    }
+    else if (password.length < 8 || password.length > 12) {
+       passwordMessage.innerHTML="Password must be 8-12 characters";
+       passwordInput.classList.add("error-border");
+       return false;
+    }
+    
+    let uppercase = /[A-Z]/.test(password);
+    let lowercase = /[a-z]/.test(password);
+    let number = /\d/.test(password);
+    let specialChar = /[!@#$_%^&*]/.test(password);
+    
+    if (!uppercase) {
+        errors.push("Must include at least one uppercase letter");
+    }
+    if (!lowercase) {
+        errors.push("Must include at least one lowercase letter");
+    }
+    if (!number) {
+        errors.push("Must include at least one number");
+    }
+    if (!specialChar) {
+        errors.push("Must include at least one special character (!@#$_%^&*)");
+    }
+
+    if (errors.length > 0) {
+        passwordMessage.innerHTML = errors.join("<br>");  
+        passwordInput.classList.add("error-border");
+        return false;
+    } else {
+        passwordMessage.innerHTML = "";
+        passwordInput.classList.remove("error-border");
+        return true;
+    }
+}
+
+function validate_forgot_confirm_pass() {
+    let passwordInput = document.forms["fm"]["pwd"];
+    let confirmPasswordInput = document.forms["fm"]["confirmpwd"];
+    let password = passwordInput.value.trim();
+    let confirmPassword = confirmPasswordInput.value.trim();
+    let confirmPasswordMessage = document.getElementById("confirmpwd");
+
+    if (password !== confirmPassword) {
+        confirmPasswordMessage.innerHTML = "Confirm Password must match the Password!";
+        confirmPasswordInput.classList.add("error-border");
+        return false;
+    } else {
+        confirmPasswordMessage.innerHTML = "";
+        confirmPasswordInput.classList.remove("error-border");
+        return true;
+    }
 }

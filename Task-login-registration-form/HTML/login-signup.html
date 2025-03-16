@@ -27,7 +27,7 @@
           </div>
           <p id="email" ></i></p>
           <div class="input-field">
-            <input type="password" onchange="validate_login_password()" class="password" name="password"
+            <input type="password"  onchange="validate_login_password()" class="password" name="password"
               placeholder="Enter your password" required>
             <i class="uil uil-lock icon"></i>
             <i class="uil uil-eye-slash showHidePw" id="passwordeye"></i>
@@ -93,7 +93,7 @@
 
           <div class="checkbox-text">
             <div class="checkbox-content">
-              <input type="checkbox" id="termCon" name="check" required>
+              <input type="checkbox" id="termCon" onchange="validate_terms()" name="check" required>
               <label for="termCon" class="text">I accepted all terms and conditions</label>
             </div>
           </div>

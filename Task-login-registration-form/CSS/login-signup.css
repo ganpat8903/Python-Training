@@ -26,7 +26,8 @@ body {
     opacity: 0;
     transition: opacity 0.09s ease;
 }
-.container .forget{
+
+.container .forget {
     opacity: 0;
     transition: opacity 0.09s ease;
     position: absolute;
@@ -45,6 +46,7 @@ body {
     transition: opacity 0.2s ease;
     border-radius: 10px;
 }
+
 .container.act .login {
     margin-left: -50%;
     opacity: 0;
@@ -58,6 +60,7 @@ body {
     position: relative;
     right: 50%;
 }
+
 .container {
     position: relative;
     max-width: 430px;
@@ -243,8 +246,6 @@ body {
     color: #4070f4;
 }
 
-
-
 .form p {
     color: rgba(198, 6, 6, 0.936);
     font-size: 12px;
@@ -258,4 +259,12 @@ body {
     color: rgba(198, 6, 6, 0.936);
     font-size: 23px;
     transition: all 0.2s ease;
+}
+
+.input-field input.error-border {
+    border: 2px solid rgba(198, 6, 6, 0.936);
+}
+
+.input-field b.exclam.error-exclam {
+    visibility: visible;
 }
